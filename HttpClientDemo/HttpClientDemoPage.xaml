@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:HttpClientDemo" x:Class="HttpClientDemo.HttpClientDemoPage">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+	</ContentPage.Padding>
+<!--	<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+	<ListView x:Name="listView" HasUnevenRows="true">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+<!--				<TextCell Text="{Binding INSURER_Name}" Detail="{Binding Address}"/>-->
+				<ViewCell>
+					<StackLayout Orientation="Vertical" Spacing="0" Margin="15,0,0,0">
+						<Label Text="{Binding INSURER_Name}"/>
+						<StackLayout Orientation="Horizontal">
+							<Label Text="電話：" FontSize="10" />
+							<Label Text="{Binding Tel}" FontSize="10" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label Text="地址：" FontSize="10" />
+							<Label Text="{Binding Address}" FontSize="10" />
+						</StackLayout>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>
